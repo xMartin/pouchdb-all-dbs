@@ -5,10 +5,12 @@ PouchDB allDbs() plugin
 
 This plugin exposes the `PouchDB.allDbs()` function, which you can use to list all local databases. It works by listening for `PouchDB.on('created')` and `PouchDB.on('destroyed')` events, and maintaining a separate database to store the names of those databases.
 
-*Note*: `allDbs()` used to be part of PouchDB core, enabled using `PouchDB.enableAllDbs = true`. It was deprecated in PouchDB 2.0.0, and now lives on as a plugin.
+**Note**: `allDbs()` used to be part of PouchDB core (enabled using `PouchDB.enableAllDbs = true`). It was deprecated in PouchDB 2.0.0, and now lives on as a plugin.
 
 Usage
 -----
+
+### In the browser
 
 To use this plugin, include it after `pouchdb.js` in your HTML page:
 
@@ -23,7 +25,11 @@ This plugin is also available from Bower:
 bower install pouchdb-all-dbs
 ```
 
-Or to use it in Node.js, just npm install it:
+Merely including it as a script tag will work, assuming you also used a script tag for PouchDB.
+
+### In Node/Browserify/Webpack/etc.
+
+First, npm install it:
 
 ```
 npm install pouchdb-all-dbs
